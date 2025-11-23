@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/taskdb";
     private static final String USER = "root";
-    private static final String PASS = "Aditi321"; // Hard-coded per request (not recommended for production)
+    private static final String PASS = "Aditi321";
 
     static {
         try {
