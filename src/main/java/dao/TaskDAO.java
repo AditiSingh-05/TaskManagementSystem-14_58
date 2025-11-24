@@ -68,5 +68,13 @@ public class TaskDAO {
             ps.executeUpdate();
         } catch (Exception e) { e.printStackTrace(); }
     }
-}
 
+    public void toggleTaskStatus(int id) {
+        String sql = "UPDATE tasks SET status = CASE WHEN status = 'Completed' THEN 'Pending' ELSE 'Completed' END WHERE id = ?";
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (Exception e) { e.printStackTrace(); }
+    }
+}
